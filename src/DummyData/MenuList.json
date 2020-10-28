@@ -24,6 +24,14 @@
         "menuTargetURL": "/managelogs",
         "imageSource": null
       }
-    ]
+    ]  
+  },
+  {
+    "menuid": 5,
+    "menuDisplayName": "Search",
+    "menuTargetURL": "/search",
+    "imageSource": "fa-tachometer-alt",
+    "subMenus": []
   }
+
 ]

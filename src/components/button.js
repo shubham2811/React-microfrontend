@@ -20,7 +20,7 @@ export const Button = (props) => {
       color={color || 'primary'}
       variant={variant || 'contained'}
       disabled={disabled}
-      style={{borderRadius: '30px 30px 30px 30px'}}
+     
       {...props}
     >
       {children}
@@ -34,7 +34,7 @@ export const Button = (props) => {
       variant={variant || 'contained'}
       disabled={disabled}
       autoFocus={autoFocus}
-      style={{borderRadius: '30px 30px 30px 30px'}}
+    
       {...props}
     >
       {children}

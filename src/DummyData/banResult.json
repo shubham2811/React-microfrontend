@@ -1,0 +1,91 @@
+{
+   "data":[
+      {
+         "billingAccountName":"BILLY N ACUNA-ZZ",
+         "billingAccountNameExt":{
+            "firstName":"BILLY",
+            "middleName":"N",
+            "lastName":"ACUNA-ZZ"
+         },
+         "billingAcctNum":"143563",
+         "contactNum":"hidden",
+         "lineOfBusiness":"mobility",
+         "brand":"telus",
+         "billingAcctStatus":"Open",
+         "billingAcctType":"TELUS Mobility - Consumer",
+         "billingTypeSubtype":{
+            "type":"I",
+            "subtype":"R"
+         },
+         "billingAddress":"3001 MONTCALM CRES SW CALGARY AB CAN T2T3M8",
+         "billingAddressSearchTxt":"3001 MONTCALM CRES SW CALGARY AB",
+         "billingAddressExt":{
+            "primaryLineTxt":"3001 MONTCALM CRES SW",
+            "streetNum":"3001",
+            "streetName":"MONTCALM",
+            "cityName":"CALGARY",
+            "provinceCode":"AB",
+            "postalCode":"T2T3M8",
+            "countryCode":"CAN"
+         },
+         "billingAccountDate":"1994-12-18",
+         "customerId":"143563",
+         "pin":"1568",
+         "authorizedUsers":[
+            "ERNESTINE MCADAMS-ZZ"
+         ],
+         "transBillingAcctStatus":"Open",
+         "preferredLanguage":"English",
+         "customerPortalEmail":"",
+         "customerPrimaryContactEmail":"noreply@telus.com",
+         "contactPhoneNum":"4036628720",
+         "mobHomeContact":"4036628720",
+         "mobBusinessContact":""
+      },
+
+
+      {
+         "billingAccountName":"Telus International",
+         "billingAccountNameExt":{
+            "firstName":"Telus",
+            "middleName":"International",
+            "lastName":"International"
+         },
+         "billingAcctNum":"12345",
+         "contactNum":"hidden",
+         "lineOfBusiness":"mobility",
+         "brand":"telus",
+         "billingAcctStatus":"Open",
+         "billingAcctType":"TELUS Mobility - Consumer",
+         "billingTypeSubtype":{
+            "type":"I",
+            "subtype":"R"
+         },
+         "billingAddress":"3001 MONTCALM CRES SW CALGARY AB CAN T2T3M8",
+         "billingAddressSearchTxt":"3001 MONTCALM CRES SW CALGARY AB",
+         "billingAddressExt":{
+            "primaryLineTxt":"3001 MONTCALM CRES SW",
+            "streetNum":"3001",
+            "streetName":"MONTCALM",
+            "cityName":"CALGARY",
+            "provinceCode":"AB",
+            "postalCode":"T2T3M8",
+            "countryCode":"CAN"
+         },
+         "billingAccountDate":"1994-12-18",
+         "customerId":"143563",
+         "pin":"1568",
+         "authorizedUsers":[
+            "ERNESTINE MCADAMS-ZZ"
+         ],
+         "transBillingAcctStatus":"Open",
+         "preferredLanguage":"English",
+         "customerPortalEmail":"",
+         "customerPrimaryContactEmail":"noreply@telus.com",
+         "contactPhoneNum":"4036628720",
+         "mobHomeContact":"4036628720",
+         "mobBusinessContact":""
+      }
+   ],
+   "errors":null
+}

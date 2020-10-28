@@ -21,5 +21,6 @@ export const routes = {
   LOGS: '/app/administration/managelogs',
   USERS: '/app/administration/users',
   APPLICATION_ERROR: '/applicationError',
+  SEARCH:'/app/search',
   NO_MATCH: '*'
 };

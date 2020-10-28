@@ -4,6 +4,7 @@ import { Switch, Route, Redirect, } from "react-router-dom";
 
 import Header from '../components/Header';
 import Sidebar from './Sidebar';
+import Search from './Search'
 import Loader from '../components/Loader';
 import Dashboard from '../components/Dashboard';
 import Footer from '../components/Footer';
@@ -60,6 +61,9 @@ class Main extends React.Component {
                 </Route>
                 <Route exact path={routes.DASHBOARD}>
                   <Dashboard />
+                </Route>
+                <Route exact path={routes.SEARCH}>
+                  <Search />
                 </Route>
               </Switch>
               <Footer />
