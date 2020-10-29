@@ -1,53 +1,55 @@
-const path = require('path');
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { DefinePlugin } = require("webpack");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const Dotenv = require('dotenv-webpack');
+const dotenv = require("dotenv");
 
 // To prevent argv being undefined, let's use a default value
 module.exports = (env = {}, argv = {}) => {
-  let envPath = '.env';
+  const envPath = {};
   if (env.dev) {
-    envPath = '.env.dev';
+    envPath.path = path.join(__dirname, "config", ".env.dev");
   } else if (env.qa) {
-    envPath = '.env.qa';
+    envPath.path = path.join(__dirname, "config", ".env.qa");
   } else if (env.stg) {
-    envPath = '.env.stg';
+    envPath.path = path.join(__dirname, "config", ".env.stg");
   } else if (env.prod) {
-    envPath = '.env.prod';
+    envPath.path = path.join(__dirname, "config", ".env.prod");
   }
+  dotenv.config(envPath);
 
   return {
-    entry: './src/index.js',
+    entry: "./src/index.js",
     output: {
-      path: path.join(__dirname, '/build'),
-      filename: 'main.js',
-      publicPath: '/', // allows you to specify the base path for all the assets within your application
+      path: path.join(__dirname, "/build"),
+      filename: "main.js",
     },
     devServer: {
       inline: true,
-      port: 3000,
+      port: 3001,
       historyApiFallback: true, // will redirect 404s to /index.html
     },
     devtool: "source-map", // allow easy debugging in source tree in console
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: 'babel-loader'
+          use: {
+            loader: "babel-loader",
+          },
         },
         {
           test: /\.(gif|png|jpe?g|svg|ico)$/i,
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            name: '[path][name].[ext]',
-          }
+            name: "[path][name].[ext]",
+          },
         },
         {
           test: /\.(ogg|mp3|wav|mpe?g)$/i,
-          use: 'file-loader'
+          use: "file-loader",
         },
         {
           test: /\.(scss|css)$/i,
@@ -58,58 +60,56 @@ module.exports = (env = {}, argv = {}) => {
             {
               loader: "css-loader",
               options: {
-                sourceMap: true
-              }
+                sourceMap: true,
+              },
             },
             {
               loader: "sass-loader",
               options: {
-                sourceMap: true
-              }
-            }
-          ]
+                sourceMap: true,
+              },
+            },
+          ],
         },
         {
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
           use: [
             {
-              loader: 'file-loader',
+              loader: "file-loader",
               options: {
-                name: '[name].[ext]',
-                outputPath: 'fonts/'
-              }
-            }
-          ]
-        }
-      ]
+                name: "[name].[ext]",
+                outputPath: "fonts/",
+              },
+            },
+          ],
+        },
+      ],
     },
     plugins: [
       // Any option given to Webpack client can be captured on the "argv"
       // generate an HTML5 file for you that includes all your webpack bundles in the body using script tags.
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'src', 'index.html'),
-        manifest: "./src/manifest.json",
-        favicon: "./src/images/favicon.ico"
+        template: path.join(__dirname, "public", "index.html"),
+        manifest: "./public/manifest.json",
+        favicon: "./public/favicon.ico",
       }),
       argv.mode === "production"
         ? new MiniCssExtractPlugin({
-          filename: "[name].css",
-          chunkFilename: "[id].css"
-        })
+            filename: "[name].css",
+            chunkFilename: "[id].css",
+          })
         : null,
       env.analyse ? new BundleAnalyzerPlugin() : null, // will help you identify output files that take up the most space
       new DefinePlugin({
         "process.env": {
-          NODE_ENV: JSON.stringify(argv.mode)
-        }
+          NODE_ENV: JSON.stringify(argv.mode),
+          API_BASE_URL: JSON.stringify(process.env.API_BASE_URL),
+          APP_ID: JSON.stringify(process.env.APP_ID),
+        },
       }),
-      new Dotenv({
-        path: envPath,
-        safe: true,
-      })
     ].filter(
       // To remove any possibility of "null" values inside the plugins array, we filter it
-      plugin => !!plugin
-    )
-  }
+      (plugin) => !!plugin
+    ),
+  };
 };

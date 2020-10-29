@@ -1,45 +1,34 @@
-# react-redux-router-hooks-starter-kit
-A starter kit with react 16 hooks, redux-thunk, react-router, webpack4 and prettier.
+# react-microfrontend
 
-## Contains:
+A react micro-frontend application.
 
-* environment specific file - single place to configure app
-* webpack is used for bundling the app
-* react-router configuration with private routing
-* Redux setup with thunk middleware
-* Code splitting using @loadable/component
-* Environment specific API Call using Axios
-* Environment configuration in package scripts
-* separate containers and components
-* Toastr setup with standard options in utils
+## Uses:
+
+This project uses a starter kit [react-redux-router-hooks-starter-kit](https://github.com/gurpreetbirdi/react-redux-router-hooks-starter-kit.git 'gurpreetbirdi/react-redux-router-hooks-starter-kit')
 
 ## Getting Started
 
 **1. Clone the repository to your local machine by running:**
 
 ```bash
-git clone https://github.com/gurpreetbirdi/react-redux-router-hooks-starter-kit.git
-cd react-redux-router-hooks-starter-kit
+git clone https://github.com/shubham2811/React-microfrontend.git
+cd React-microfrontend
 ```
 
 **2. Install all dependencies:**
 
-```npm install``` or ```yarn install```
+`npm install` or `yarn install`
 
-**3. Change Specific environment variable file:(Reference file- .env.example)**
+**3. Run the app:**
 
-```.env.{variable}``` ```dev||qa||stg||prod```
+`npm start` or `yarn start`
 
-**4. Run the app:**
+Run webapp on port 3001 with HMR enabled or you can change port in webpack.config.js
 
-```npm start``` or ```yarn start```
+**4. Build files for deployment:**
 
-Run server on port 3000 with HMR enabled or you can change port in webpack.config.js
-
-**5. Build files for deployment:**
-
-```npm run build:{variable}``` or ```yarn build:{variable}``` ```dev||qa||stg||prod```
+`npm run build:{variable}` or `yarn build:{variable}` `dev||qa||stg||prod`
 
 Building app in the "build" directory. Contains the index.html with the minified assets, it's ready for production!.
 
-                                                    **Happy Coding**
+                                **Happy Coding**
