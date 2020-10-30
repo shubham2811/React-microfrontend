@@ -14,7 +14,7 @@ export const CardList = ({ headers, rowData,count }) => {
         <>
           {rowData.map((row) => {
             return (
-              <Grid item lg={12} md={12} xl={12} xs={12} key={row.id}>
+              <Grid item lg={12} md={12} xl={12} xs={12} key={row.billingAcctNum}>
                 <Card>
                   <CardContent>
                     <Grid container spacing={2}>

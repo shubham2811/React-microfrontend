@@ -19,14 +19,13 @@ const headers = [
 const Search = () => {
   const [result, setResult] = useState([]);
   const handleSearch = (data) => {
-    console.log(data);
+    // console.log(data);
 
     const searchResult = BanResult.data.filter(
       (item) => item.billingAcctNum === data.ban
     );
     setResult(searchResult);
   };
-  console.log(BanResult.data);
   const classes = useStyles();
   return (
     <div className={classes.root}>

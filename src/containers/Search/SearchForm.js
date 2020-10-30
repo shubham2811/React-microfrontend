@@ -6,12 +6,12 @@ import { ValidationConstants } from "../../utils/ValidationConstants";
 import { Button } from "../../components/button";
 import Form from "../../components/form";
 import { InputTextBox } from "../../components/inputTextBox";
-import { Typography } from "@material-ui/core";
+import { Typography,Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
-  form: {
-    width: "100%", // Fix IE 11 issue.
+  search: {
+    margin: theme.spacing(3, 0.8, 2),
   },
-  submit: {
+  clear: {
     margin: theme.spacing(3, 0, 2),
   },
   boxdiv: {
@@ -31,14 +31,13 @@ export const SearchForm = (props) => {
     <div className={classes.boxdiv}>
       <Typography>Search for a customer account below.</Typography>
       <Form
-        className={classes.form}
         form="searchForm"
         onSubmit={props.handleloginSubmit}
       >
         <InputTextBox
           name="telephone"
           label="Telephone"
-          placeholder="Please Enter Ban No"
+          placeholder="Please Enter Telephone"
           fullWidth
           variant="outlined"
           validation={[regexValidation(ValidationConstants.PHONE_NUMBER)]}
@@ -47,7 +46,7 @@ export const SearchForm = (props) => {
         <InputTextBox
           name="ban"
           label="Ban No"
-          placeholder="Please Enter Ban No"
+          placeholder="ex:12345,143563"
           fullWidth
           variant="outlined"
           validation={[required("Ban No")]}
@@ -61,9 +60,18 @@ export const SearchForm = (props) => {
           variant="outlined"
           isformfield={true}
         />
-        <Button type="submit" fullWidth className={classes.submit}>
+        <Grid container justify='flex-end'>
+        <Grid item ={6}>
+        <Button type="button" fullWidth className={classes.clear}>
+          Clear
+        </Button>
+        </Grid>
+        <Grid item ={6}>
+        <Button type="submit" fullWidth color="secondary" className={classes.search}>
           Search
         </Button>
+        </Grid>
+        </Grid>
       </Form>
     </div>
   );
